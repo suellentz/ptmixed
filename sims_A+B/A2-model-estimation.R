@@ -16,7 +16,7 @@ for (case in 6:10) {
   for (subcase in 1:4) {
     load(paste('data/data-', case, '-', subcase, '.RData', sep = ''))
     y = data[,nsub]
-    df = data.frame(y, group, time)
+    df = data.frame(y, group, time, id)
     # mle full model
     t.est = system.time(
       mixed.model <- try( ptmixed(y ~ group + time, id = id, 
